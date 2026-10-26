@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VoM Tarot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="reader">
+
+  <section id="intro">
+    <h1>VoM Tarot</h1>
+    <p class="lede">Draw three cards from the deep: what has passed, what stands now, and what approaches.</p>
+    <div class="stack" id="stack" aria-hidden="true"></div>
+    <button class="action" id="shuffle" disabled>Shuffle the deck</button>
+    <p class="aside-link" id="intro-note"><a href="how-to-read.html">How readings work</a></p>
+  </section>
+
+  <section id="choose" hidden>
+    <p class="prompt">Choose three cards</p>
+    <p class="count" id="count" aria-live="polite">None chosen yet</p>
+    <div class="spread" id="spread"></div>
+  </section>
+
+  <section id="reading" hidden>
+    <div class="slots" id="slots"></div>
+    <div class="fortune" id="fortune" aria-live="polite"></div>
+    <div class="again" id="again" hidden>
+      <button class="action" id="restart">Draw again</button>
+      <p class="aside-link"><a href="how-to-read.html">How readings work</a></p>
+    </div>
+  </section>
+
+</main>
+<script>
+const SPREAD_SIZE = 21;
+const REVERSED_CHANCE = 0.3;
+const STACK_SIZE = 7;
+const POSITIONS = [
+  { title: "What has passed", lines: ["Behind you stands {omen}.", "What has passed lies under {omen}.", "Your past was shaped by {omen}."] },
+  { title: "What stands now", lines: ["What stands now is {omen}.", "At the center of things lies {omen}.", "This hour belongs to {omen}."] },
+  { title: "What approaches", lines: ["Ahead of you waits {omen}.", "What approaches comes as {omen}.", "From the dark ahead rises {omen}."] }
+];
+const OPENINGS = {
+  Attack3: "Every card drawn is a blade. This is a season of struggle, and it will not pass quietly.",
+  Effect3: "Every card drawn is of the uncanny sort. Nothing in your path will keep the shape it seems to have.",
+  Block3: "Three wards rise from the deep. Whatever is coming, you are being sheltered for a reason.",
+  Attack: "Conflict runs through this spread like a vein through stone.",
+  Effect: "Strange currents move beneath this spread. Change is rising from below.",
+  Block: "Protection gathers around you, and protection is never offered without cause.",
+  mixed: "Force, change and protection share this spread. The balance is delicate; tip it with care."
+};
+const CLOSINGS = [
+  "No card lies inverted. The stars are right, for now.",
+  "One card lies inverted. Heed its warning before the others come to pass.",
+  "Two cards lie inverted. Something in the deep resists you; move carefully.",
+  "All three cards lie inverted. Something vast has turned its gaze toward you."
+];
+
+const BACK_SVG = `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
+  <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30" stroke-width="1"/>
+  <path d="M22 50 Q50 26 78 50 Q50 74 22 50 Z"/><circle cx="50" cy="50" r="8" fill="currentColor"/>
+  <path d="M50 6 V18 M50 82 V94 M6 50 H18 M82 50 H94" stroke-width="1"/>
+  <path d="M30 78 q4 8 -2 14 M50 80 q-3 8 2 14 M70 78 q-4 8 2 14" stroke-width="1.2"/>
+</svg>`;
+const backHTML = () => `<div class="back">${BACK_SVG}</div>`;
+
+const $ = id => document.getElementById(id);
+const rand = n => crypto.getRandomValues(new Uint32Array(1))[0] % n;
+const pickOne = list => list[rand(list.length)];
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
+const escapeHTML = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function shuffle(list) {
+  const a = list.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = rand(i + 1); [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+let CARDS = [], spread = [], chosen = [];
+
+function show(section) {
+  for (const id of ["intro", "choose", "reading"]) $(id).hidden = id !== section;
+  window.scrollTo({ top: 0 });
+}
+
+/* ---------- shuffle animation: the stack riffles a few times, then the spread is dealt ---------- */
+function buildStack() {
+  $("stack").innerHTML = Array.from({ length: STACK_SIZE }, (_, i) => {
+    const r = (rand(9) - 4) * 0.9, x = rand(7) - 3, y = -i;
+    return `<div class="back" style="--r:${r}deg; --x:${x}px; --y:${y}px">${BACK_SVG}</div>`;
+  }).join("");
+}
+
+async function riffle() {
+  if (reducedMotion()) return;
+  const cards = [...$("stack").children];
+  for (let pass = 0; pass < 3; pass++) {
+    await Promise.all(cards.map((el, i) => {
+      const side = i % 2 ? 1 : -1;
+      const reach = 55 + rand(25);
+      return el.animate([
+        { transform: "none" },
+        { transform: `translate(${side * reach}%, ${-6 - i * 2}px) rotate(${side * 10}deg)`, offset: 0.45 },
+        { transform: "none" }
+      ], { duration: 520, delay: (pass % 2 ? STACK_SIZE - i : i) * 30, easing: "cubic-bezier(.45,0,.25,1)", composite: "add" }).finished;
+    }));
+  }
+  // square the deck up with a small tap
+  await $("stack").animate([{ transform: "none" }, { transform: "translateY(-10px)" }, { transform: "none" }],
+    { duration: 260, easing: "ease-out" }).finished;
+}
+
+async function shuffleAndDeal() {
+  show("intro");
+  $("shuffle").disabled = true;
+  $("shuffle").textContent = "Shuffling…";
+  await riffle();
+  $("shuffle").textContent = "Shuffle the deck";
+  $("shuffle").disabled = false;
+  deal();
+}
+
+function deal() {
+  spread = shuffle(CARDS).slice(0, SPREAD_SIZE).map(card => ({ card, reversed: Math.random() < REVERSED_CHANCE }));
+  chosen = [];
+  const mid = (SPREAD_SIZE - 1) / 2;
+  $("spread").innerHTML = spread.map((_, i) => {
+    const off = i - mid;
+    return `<button class="pick" data-i="${i}" aria-label="Face-down card ${i + 1}"
+      style="--i:${i}; --r:${(off * 1.6).toFixed(1)}deg; --y:${(Math.abs(off) ** 2 * 0.45).toFixed(1)}px">${backHTML()}</button>`;
+  }).join("");
+  updateCount();
+  show("choose");
+}
+
+function updateCount() {
+  const n = chosen.length;
+  $("count").textContent = n === 0 ? "None chosen yet" : `${n} of 3 chosen`;
+}
+
+$("spread").addEventListener("click", e => {
+  const btn = e.target.closest(".pick");
+  if (!btn || btn.classList.contains("taken") || chosen.length >= 3) return;
+  btn.classList.add("taken");
+  btn.setAttribute("aria-disabled", "true");
+  chosen.push(spread[+btn.dataset.i]);
+  updateCount();
+  if (chosen.length === 3) setTimeout(reveal, 650);
+});
+
+/* ---------- the reveal ---------- */
+function faceHTML({ card, reversed }) {
+  const src = `tarot_cards/card_${card.id}_${reversed ? "reversed" : "upright"}.png`;
+  const alt = `${card.name}: ${card.omen}${reversed ? ", reversed" : ""}`;
+  const fallback = `<div class="fallback"><strong>${escapeHTML(card.omen)}</strong><em>${escapeHTML(card.name)}${reversed ? ", reversed" : ""}</em></div>`;
+  return `<div class="face"><img src="${src}" alt="${escapeHTML(alt)}"
+    onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.fb))"
+    data-fb="${escapeHTML(fallback)}"></div>`;
+}
+
+async function reveal() {
+  const picks = chosen.slice();
+  $("slots").innerHTML = picks.map((pick, i) => `
+    <div class="slot">
+      <h2>${POSITIONS[i].title}</h2>
+      <div class="flip"><div class="flip-inner">${backHTML()}${faceHTML(pick)}</div></div>
+    </div>`).join("");
+  $("fortune").classList.remove("shown");
+  $("fortune").innerHTML = "";
+  $("again").hidden = true;
+  show("reading");
+
+  const writing = fetchReading(picks);          // ask for the reading while the cards turn
+  const step = reducedMotion() ? 0 : 900;
+  const flips = [...document.querySelectorAll(".flip")];
+  for (const f of flips) { await sleep(step || 1); f.classList.add("shown"); }
+  await sleep(step ? 700 : 0);
+
+  $("fortune").innerHTML = `<p class="waiting">The cards are speaking…</p>`;
+  $("fortune").classList.add("shown");
+  const reading = await writing;
+  $("fortune").classList.remove("shown");
+  await sleep(step ? 300 : 0);
+  $("fortune").innerHTML = reading ? readingHTML(reading) : templateReading(picks);
+  $("fortune").classList.add("shown");
+  $("again").hidden = false;
+}
+
+async function fetchReading(picks) {
+  try {
+    const res = await fetch("/api/reading", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ picks: picks.map(p => ({ id: p.card.id, reversed: p.reversed })) }),
+      signal: AbortSignal.timeout(30000)
+    });
+    if (!res.ok) throw new Error(`reading failed: ${res.status}`);
+    return (await res.json()).reading;
+  } catch (err) {
+    console.warn("Using the built-in reading instead:", err);
+    return null;
+  }
+}
+
+function readingHTML(text) {
+  return text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
+    .map(p => `<p>${escapeHTML(p).replace(/\n/g, "<br>")}</p>`).join("");
+}
+
+/* Used when the AI reading is unavailable, such as when testing on your own computer. */
+function templateReading(picks) {
+  const counts = {};
+  picks.forEach(p => counts[p.card.source] = (counts[p.card.source] || 0) + 1);
+  const [top, n] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  const opening = n === 3 ? OPENINGS[top + "3"] : n === 2 ? OPENINGS[top] : OPENINGS.mixed;
+  const body = picks.map(({ card, reversed }, i) => {
+    const omen = reversed ? `${card.omen}, inverted` : card.omen;
+    const lead = pickOne(POSITIONS[i].lines).replace("{omen}", omen);
+    return `<p><span class="lead">${escapeHTML(lead)}</span> ${escapeHTML(reversed ? card.reversed : card.upright)}</p>`;
+  }).join("");
+  const weighty = picks.find(p => p.card.tier >= 3);
+  const words = picks.map(p => pickOne(p.card.keywords));
+  let closing = CLOSINGS[picks.filter(p => p.reversed).length];
+  if (weighty) closing += ` ${weighty.card.omen} is a card of great weight; this reading will not be easily forgotten.`;
+  closing += ` Carry these words with you: ${words[0]}, ${words[1]} and ${words[2]}.`;
+  return `<p class="opening">${escapeHTML(opening)}</p>${body}<p>${escapeHTML(closing)}</p>`;
+}
+
+/* ---------- start ---------- */
+$("shuffle").addEventListener("click", shuffleAndDeal);
+$("restart").addEventListener("click", shuffleAndDeal);
+buildStack();
+fetch("cards.json")
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(data => { CARDS = data; $("shuffle").disabled = false; })
+  .catch(() => {
+    $("intro-note").textContent = "The deck could not be loaded. If you opened this file directly, run it through a local server instead (see README).";
+  });
+</script>
+</body>
+</html>

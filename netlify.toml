@@ -1,0 +1,7 @@
+# Netlify settings. The site is the plain files in this folder; the AI reading
+# runs as the function in netlify/functions/reading.mjs at /api/reading.
+[build]
+  publish = "."
+
+[functions]
+  node_bundler = "esbuild"

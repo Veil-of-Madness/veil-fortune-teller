@@ -1,0 +1,1523 @@
+[
+  {
+    "id": "shamanic_vision",
+    "name": "Shamanic Vision",
+    "gameText": "Echo 2 target card twice.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Calibrator"
+    ],
+    "image": "images/card_shamanic_vision.png",
+    "driveId": "1I3dP__U0yZkbY6rJf5Q9veOTsacb9oKB",
+    "omen": "The Twice-Told Dream",
+    "keywords": [
+      "repetition",
+      "prophecy",
+      "echoes"
+    ],
+    "upright": "What you have seen once, you will see again, louder. A vision returns to confirm what you feared was only a dream.",
+    "reversed": "You chase an echo of a moment that will not repeat. The voice you hear is your own, thrown back from the dark."
+  },
+  {
+    "id": "soul_part",
+    "name": "Soul Part",
+    "gameText": "Split target into 2.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Calibrator"
+    ],
+    "image": "images/card_soul_part.png",
+    "driveId": "1wI9yn5cuR0PBTAjGhhUpqUsh6fqbBcOS",
+    "omen": "The Divided Self",
+    "keywords": [
+      "duality",
+      "separation",
+      "multiplicity"
+    ],
+    "upright": "Something in your life will split in two, and both halves will live. Do not mourn the parting; there is more of you than you knew.",
+    "reversed": "You are pulled in two directions at once, and neither half remembers what the whole wanted."
+  },
+  {
+    "id": "reverse_flow",
+    "name": "Reverse Flow",
+    "gameText": "Apply enemy enchantment to the target card.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Calibrator"
+    ],
+    "image": "images/card_reverse_flow.png",
+    "driveId": "1DRdkvKcFVAkJwLz0susikrAruFLVwYY1",
+    "omen": "The Borrowed Curse",
+    "keywords": [
+      "reversal",
+      "turning the tables",
+      "adaptation"
+    ],
+    "upright": "The weapon raised against you can be taken and turned. Study what your enemy carries; it will soon be yours.",
+    "reversed": "Beware wearing another's power. What you steal from the dark remembers its first master."
+  },
+  {
+    "id": "moirai",
+    "name": "Moirai",
+    "gameText": "Deal 4 Elemental damage of a random type(Fire, Electric, Water, Earth) to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Calibrator"
+    ],
+    "image": "images/card_moirai.png",
+    "driveId": "19OuXv4yoFvs0Tj7J_n4prWdj61jrWcPM",
+    "omen": "The Spinners' Thread",
+    "keywords": [
+      "fate",
+      "chance",
+      "the unknowable"
+    ],
+    "upright": "The Fates have drawn a thread for you, but they did not say which color. Force is coming; its form is left to chance.",
+    "reversed": "You demand to know what cannot be known. The thread is cut whether you watch or not."
+  },
+  {
+    "id": "fire_aura",
+    "name": "Fire Aura",
+    "gameText": "Gain 3 Block, attackers get inflicted with fire element.",
+    "source": "Block",
+    "tier": 1,
+    "pools": [
+      "Calibrator"
+    ],
+    "image": "images/card_fire_aura.png",
+    "driveId": "1mrrLmnvFSVcRegxCvjN1yHvxGvz35OKe",
+    "omen": "The Burning Ward",
+    "keywords": [
+      "protection",
+      "consequence",
+      "boundaries"
+    ],
+    "upright": "Your defenses are not passive. Those who strike at you now will carry away the burn of it.",
+    "reversed": "Your walls burn too hot. Those who reach for you in kindness are scorched along with the rest."
+  },
+  {
+    "id": "inspect",
+    "name": "Inspect",
+    "gameText": "Inflict target with an Investigation Counter.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_inspect.png",
+    "driveId": "11yxZXRKhR9sCu6GAFiPu9MD5LF3io9MC",
+    "omen": "The Watcher's Mark",
+    "keywords": [
+      "scrutiny",
+      "curiosity",
+      "the first clue"
+    ],
+    "upright": "A small detail has caught your eye. Mark it; it is the first stair of a long descent into the truth.",
+    "reversed": "Some doors are not meant to be studied. The longer you look, the more something looks back."
+  },
+  {
+    "id": "deduct",
+    "name": "Deduct",
+    "gameText": "Consume all Investigation Counters on target, For each counter consumed this way inflict target with Weakness 1.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_deduct.png",
+    "driveId": "1OvvAzYaD_1gef_2csLoUkV4T2KQlNZ_q",
+    "omen": "The Revelation",
+    "keywords": [
+      "insight",
+      "conclusion",
+      "exposure"
+    ],
+    "upright": "Scattered clues assemble into one terrible shape. Understanding comes, and with it the power to weaken what you understand.",
+    "reversed": "You reach the answer too early, with too little, and the conclusion you build is a house over a void."
+  },
+  {
+    "id": "clear_mind",
+    "name": "Clear Mind",
+    "gameText": "Remove 1 Debuff Infliction from target.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_clear_mind.png",
+    "driveId": "1ycyyL7fHFQLcQouNI5XnLRzlyroKZDFs",
+    "omen": "The Lifted Veil",
+    "keywords": [
+      "clarity",
+      "release",
+      "healing"
+    ],
+    "upright": "One affliction that has clung to you will fall away. For a moment the fog thins and you can see the shore.",
+    "reversed": "You clear one shadow only to notice the others. Clarity can be its own burden."
+  },
+  {
+    "id": "sap",
+    "name": "Sap",
+    "gameText": "Inflict target with Weakness 2.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_sap.png",
+    "driveId": "1Bq2qWk7vWo3Dy7iup5u_BrPNP5Vu5ft6",
+    "omen": "The Draining Hour",
+    "keywords": [
+      "exhaustion",
+      "diminishment",
+      "attrition"
+    ],
+    "upright": "Your opponent's strength is ebbing, like a tide drawn by an unseen moon. Patience will finish what force cannot.",
+    "reversed": "It is your own strength that seeps away. Rest before the tide takes all of it."
+  },
+  {
+    "id": "gag",
+    "name": "Gag",
+    "gameText": "Inflict target with Silence 2.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_gag.png",
+    "driveId": "1q97aYI6TO__wPZYo5JN-fSskKnVBqn38",
+    "omen": "The Stilled Tongue",
+    "keywords": [
+      "silence",
+      "secrecy",
+      "restraint"
+    ],
+    "upright": "There are things you must not say yet. Hold your words; the silence is protecting you.",
+    "reversed": "Something you need to speak has been swallowed. The unspoken grows heavier in the dark."
+  },
+  {
+    "id": "concuss",
+    "name": "Concuss",
+    "gameText": "Stun target.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Cha"
+    ],
+    "image": "images/card_concuss.png",
+    "driveId": "1fx3cPZRE85pPG8I91S2-n-KVvhDUFqxt",
+    "omen": "The Stopped Clock",
+    "keywords": [
+      "shock",
+      "pause",
+      "interruption"
+    ],
+    "upright": "A sudden blow will halt everything. In the stillness after, you will see what was moving all along.",
+    "reversed": "You are frozen by a shock that has already passed. The world moves on while you stand dazed."
+  },
+  {
+    "id": "throwing_knife",
+    "name": "Throwing Knife",
+    "gameText": "Deal 1 Physical Damage to target, inflict Embedded Knife to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_throwing_knife.png",
+    "driveId": "1L54u8gqIh-SBAsyDGG2tz6eliDiYg6TQ",
+    "omen": "The Planted Blade",
+    "keywords": [
+      "small beginnings",
+      "preparation",
+      "latent threat"
+    ],
+    "upright": "A small act now lodges deep and waits. What seems minor today is the seed of a later reckoning.",
+    "reversed": "A splinter of the past is still buried in you. Until it is drawn out, it will not heal."
+  },
+  {
+    "id": "drive_deeper",
+    "name": "Drive Deeper",
+    "gameText": "Deal 3 Physical Damage to target, Consume 1 Embedded Knife from target. If you Consume Embedded Knife from target, deal 6 Physical Damage to target.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_drive_deeper.png",
+    "driveId": "1MQ94dDIfTKwuWE2ZrKkrbHaVDFMdtpVh",
+    "omen": "The Deeper Cut",
+    "keywords": [
+      "follow-through",
+      "persistence",
+      "payoff"
+    ],
+    "upright": "Return to the wound you opened long ago. The second stroke lands with the weight of the first.",
+    "reversed": "You press on an old injury out of habit. Some cuts need no deepening."
+  },
+  {
+    "id": "rip_away",
+    "name": "Rip Away",
+    "gameText": "Deal 3 Physical Damage to target, Consume 1 Embedded Knife from target. If you Consume 'Embedded Knife' from target, deal 2 Bleed II Damage to target, ADD 1x 'Throwing Knife' to your Hand.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_rip_away.png",
+    "driveId": "1g0nWJNHy43lgdg8CTQYENvW14TKuEkRT",
+    "omen": "The Torn Return",
+    "keywords": [
+      "cycles",
+      "extraction",
+      "renewal through pain"
+    ],
+    "upright": "What you tear free comes back to your hand. A painful ending arms you for the next beginning.",
+    "reversed": "You rip out the thorn and reach at once for another. Ask why the cycle comforts you."
+  },
+  {
+    "id": "meditate",
+    "name": "Meditate",
+    "gameText": "Stabilize 2.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_meditate.png",
+    "driveId": "19HzL7aLZS3zKa-SFJf_F-90hoHme8D9z",
+    "omen": "The Quiet Mind",
+    "keywords": [
+      "calm",
+      "grounding",
+      "sanity"
+    ],
+    "upright": "In the howling, find a single still point. A small calm now keeps the abyss at the edge of sight.",
+    "reversed": "You sit in silence, but the silence is not empty. Something is listening to your breath."
+  },
+  {
+    "id": "cleanse",
+    "name": "Cleanse",
+    "gameText": "Stabilize 3, Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_cleanse.png",
+    "driveId": "172b4qCui65E5uI0900_L191vv_-x7v2o",
+    "omen": "The Washing Away",
+    "keywords": [
+      "purification",
+      "letting go",
+      "release"
+    ],
+    "upright": "Steady yourself, then let it go entirely. What you release cannot follow you down the corridor.",
+    "reversed": "You scrub at a stain that is not on the surface. Some marks are written beneath the skin."
+  },
+  {
+    "id": "bury",
+    "name": "Bury",
+    "gameText": "Stabilize 4.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_bury.png",
+    "driveId": "1wErH7AJhhCyRbHhUd8Li_FVqG-CanvBM",
+    "omen": "The Shallow Grave",
+    "keywords": [
+      "repression",
+      "the price of peace",
+      "hidden things"
+    ],
+    "upright": "You may purchase peace with a piece of yourself. Bury what haunts you; the ground will hold it, for now.",
+    "reversed": "What is buried does not stay buried. The earth over your secret is already shifting."
+  },
+  {
+    "id": "elucidate",
+    "name": "Elucidate",
+    "gameText": "Evade 1, Stabilize 4.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_elucidate.png",
+    "driveId": "13sFGqKRJP_mrWMeXJnEI8ffjAa1WbBpB",
+    "omen": "The Illumination",
+    "keywords": [
+      "understanding",
+      "evasion",
+      "lucidity"
+    ],
+    "upright": "A sudden understanding lets you step aside from a blow you never saw coming. Lucidity is its own armor.",
+    "reversed": "You understand too much to be at ease. Some knowledge sharpens the mind until it cuts."
+  },
+  {
+    "id": "reform",
+    "name": "Reform",
+    "gameText": "Stabilize 2, Glitchshift(Stabilize).",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_reform.png",
+    "driveId": "1o_Dh-qC0IvI2pII_3UdJ8eNn3TXFsd3Q",
+    "omen": "The Shifting Shape",
+    "keywords": [
+      "transformation",
+      "reinvention",
+      "instability"
+    ],
+    "upright": "You will become a slightly different version of yourself, and the new shape will hold better than the old.",
+    "reversed": "You keep changing form to escape a fear that changes with you."
+  },
+  {
+    "id": "serendipitous_remedy",
+    "name": "Serendipitous Remedy",
+    "gameText": "Stabilize 1-6.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_serendipitous_remedy.png",
+    "driveId": "1h0pFHFLrYmDtdDAWRYpSG6nRPYE74-Rf",
+    "omen": "The Lucky Draught",
+    "keywords": [
+      "luck",
+      "uncertain help",
+      "chance healing"
+    ],
+    "upright": "Help is coming, though no one can say how much. Drink what fortune pours and do not complain of the measure.",
+    "reversed": "You stake your recovery on chance. The cup may be full, or it may hold a single drop."
+  },
+  {
+    "id": "backstep",
+    "name": "Backstep",
+    "gameText": "Gain 3 Block, Gain 1 Combo Point.",
+    "source": "Block",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_backstep.png",
+    "driveId": "17rHc8H5J6x-XDXQCyvy--h-PDEzDV6lE",
+    "omen": "The Measured Retreat",
+    "keywords": [
+      "strategic withdrawal",
+      "preparation",
+      "momentum"
+    ],
+    "upright": "Stepping back is not defeat. Each careful retreat gathers strength for the strike to come.",
+    "reversed": "You retreat so often you have forgotten you meant to return."
+  },
+  {
+    "id": "needle_box",
+    "name": "Needle Box",
+    "gameText": "ADD 4x 'Needle' to your draw pile.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_needle_box.png",
+    "driveId": "1QN1m5LnoD6hIefIlatmMWUBUE113sn0d",
+    "omen": "The Thousand Small Things",
+    "keywords": [
+      "accumulation",
+      "patience",
+      "many small efforts"
+    ],
+    "upright": "No single blow will decide this. Prepare many small efforts; together they will draw blood.",
+    "reversed": "You are buried under small tasks, each harmless, together suffocating."
+  },
+  {
+    "id": "needle",
+    "name": "Needle",
+    "gameText": "Deal 1 Bleed I Damage to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_needle.png",
+    "driveId": "1-6Mr5fM9NxdZ0Dra7Q36EYCYLz8plkX4",
+    "omen": "The Pinprick",
+    "keywords": [
+      "small persistent harm",
+      "irritation",
+      "precision"
+    ],
+    "upright": "A tiny wound, precisely placed, bleeds longer than a grand one. Precision outlasts power.",
+    "reversed": "A minor irritation is slowly draining you. Name it before it becomes a wound."
+  },
+  {
+    "id": "borrowed_time",
+    "name": "Borrowed Time",
+    "gameText": "Heal 12, deal 6 Poison damage to self.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_borrowed_time.png",
+    "driveId": "1D0_YmZvWzuO9OIfR_Yyj2Ak8Ao3gU3Ny",
+    "omen": "The Debt of Hours",
+    "keywords": [
+      "borrowing",
+      "deferred cost",
+      "relief with a price"
+    ],
+    "upright": "Relief is offered now, and generously. Accept it, but know the bill is already on its way.",
+    "reversed": "You have lived on borrowed hours for too long. The lender is growing impatient."
+  },
+  {
+    "id": "calculated_sacrifice",
+    "name": "Calculated Sacrifice",
+    "gameText": "Heal 6.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_calculated_sacrifice.png",
+    "driveId": "1Zd6AYDDgMM-vMTC1k4ky4xR1arsmxU57",
+    "omen": "The Fair Exchange",
+    "keywords": [
+      "investment",
+      "trade-off",
+      "wise sacrifice"
+    ],
+    "upright": "Give a little of yourself and receive more in return. This sacrifice is a sound bargain.",
+    "reversed": "You give and give, and call it strategy. Make sure the ledger truly balances."
+  },
+  {
+    "id": "cruelty",
+    "name": "Cruelty",
+    "gameText": "Deal 6 Arcane Damage to target, if the target is at Low Health Heal 6.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_cruelty.png",
+    "driveId": "1tQNjToTlbwetaueDD5g-aPAJKdIycj9-",
+    "omen": "The Merciless Hand",
+    "keywords": [
+      "opportunism",
+      "ruthlessness",
+      "striking the weak"
+    ],
+    "upright": "When your opponent falters, you will be tempted to press the advantage. Fortune favors the unflinching, but it remembers.",
+    "reversed": "You feed on the weakness of others and call it strength. The hunger will turn inward."
+  },
+  {
+    "id": "transmute_essence",
+    "name": "Transmute Essence",
+    "gameText": "Deal 6 Arcane Damage to target, Heal 6.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_transmute_essence.png",
+    "driveId": "1E8pmYlMCg6NbC2fH7G3Zq8YcKAR1s37j",
+    "omen": "The Alchemist's Exchange",
+    "keywords": [
+      "transformation",
+      "balance",
+      "taking and giving"
+    ],
+    "upright": "What you take from the world becomes your own vitality. A trade of essences leaves you renewed.",
+    "reversed": "The alchemy runs one way only. Watch what you become through what you consume."
+  },
+  {
+    "id": "self_confidence",
+    "name": "Self Confidence",
+    "gameText": "Gain 2 Block, if you have 'Toughness' infliction Gain 6 Block.",
+    "source": "Block",
+    "tier": 2,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_self_confidence.png",
+    "driveId": "1aor_3HL-yiHaX0VVtkiE_Pzd6pcFADxw",
+    "omen": "The Inner Bulwark",
+    "keywords": [
+      "confidence",
+      "resilience",
+      "self-belief"
+    ],
+    "upright": "Your defenses are only as strong as your belief in them. Trust what has already toughened you.",
+    "reversed": "Doubt has thinned your armor. You are stronger than you currently believe."
+  },
+  {
+    "id": "desperate_retreat",
+    "name": "Desperate Retreat",
+    "gameText": "Deal 2 Physical Damage to yourself, target is inflicted with Feign 1.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Colourless"
+    ],
+    "image": "images/card_desperate_retreat.png",
+    "driveId": "1aC0-u5bm0o0ptNzO0HSdzi-W5-6Cf6mJ",
+    "omen": "The Feigned Wound",
+    "keywords": [
+      "deception",
+      "desperate measures",
+      "escape"
+    ],
+    "upright": "Sometimes you must bleed a little to make the hunter believe the chase is over.",
+    "reversed": "You wound yourself to escape a danger that was never as near as you feared."
+  },
+  {
+    "id": "lethargy",
+    "name": "Lethargy",
+    "gameText": "Do nothing, Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_lethargy.png",
+    "driveId": "1tf6MKqDlflgJbWBGRBWqQIl761JoRNkk",
+    "omen": "The Drowsing God",
+    "keywords": [
+      "stillness",
+      "inaction",
+      "rest"
+    ],
+    "upright": "Not every hour demands action. Like the sleeper beneath the waves, you may wait, and the waiting is not wasted.",
+    "reversed": "You call it patience, but it is paralysis. The world will not dream on your behalf."
+  },
+  {
+    "id": "glitch",
+    "name": "Glitch",
+    "gameText": "Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_glitch.png",
+    "driveId": "1XEw1nWRt7NTiDMrtSSS5_xzc1UUX3vFm",
+    "omen": "The Fault in the Pattern",
+    "keywords": [
+      "error",
+      "anomaly",
+      "disruption"
+    ],
+    "upright": "Something in the pattern of your days does not fit. That flaw is a door, if you dare to pass through it.",
+    "reversed": "A small error is quietly unraveling the weave. Find it before the whole cloth comes apart."
+  },
+  {
+    "id": "second_chance",
+    "name": "Second Chance",
+    "gameText": "Draw 1, Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_second_chance.png",
+    "driveId": "1sAhG10zMKxafYMN2f09QZVWexixyC1J4",
+    "omen": "The Second Door",
+    "keywords": [
+      "opportunity",
+      "renewal",
+      "another try"
+    ],
+    "upright": "A door you thought sealed will open once more. Step through quickly; it will not open a third time.",
+    "reversed": "You wait for a second chance you have already been given."
+  },
+  {
+    "id": "miss_input",
+    "name": "Miss Input",
+    "gameText": "Target Gains 2 Block, Delete.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_miss_input.png",
+    "driveId": "1kTie94J6ePXcnvDV4b1RgX0nOxpP5La0",
+    "omen": "The Misstep",
+    "keywords": [
+      "mistakes",
+      "unintended help",
+      "error"
+    ],
+    "upright": "An error will help someone you never meant to help. Accept it with grace; not every mistake is a curse.",
+    "reversed": "You strengthen the very thing you meant to fight. Check your aim."
+  },
+  {
+    "id": "forced_mistake",
+    "name": "Forced Mistake",
+    "gameText": "Target gains Feign 1, Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_forced_mistake.png",
+    "driveId": "1UKfPS5vYw0WO9xTTTnR7YtUIyvVObEkQ",
+    "omen": "The Trembling Hand",
+    "keywords": [
+      "deception",
+      "pressure",
+      "manipulation"
+    ],
+    "upright": "Under pressure, the other side will stumble. Wait for the trembling hand.",
+    "reversed": "Someone is pushing you toward a mistake. Slow down; the haste is not your own."
+  },
+  {
+    "id": "fumble",
+    "name": "Fumble",
+    "gameText": "Deal 1 Physical Damage to target, Delete.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_fumble.png",
+    "driveId": "1EIImVr7ZdrZO7apsriZ5Xj-DjtIPaW-T",
+    "omen": "The Slipped Grip",
+    "keywords": [
+      "clumsiness",
+      "small failure",
+      "impermanence"
+    ],
+    "upright": "A clumsy effort still lands, faintly, and then is gone. Not every attempt needs grace to matter.",
+    "reversed": "Your grip is slipping on something you care about. Hold it more deliberately."
+  },
+  {
+    "id": "lynch",
+    "name": "Lynch",
+    "gameText": "Deal 1 Physical Damage, Critical 4. Dismiss.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_lynch.png",
+    "driveId": "1PakvcRZG6zqLujBdm63uV1qFXx7W9YKv",
+    "omen": "The Mob's Verdict",
+    "keywords": [
+      "harsh judgment",
+      "steep price",
+      "decisive force"
+    ],
+    "upright": "A brutal judgment is coming, swift and heavy. It will land, but it will cost the one who delivers it.",
+    "reversed": "You are being judged by a crowd that has already decided. Do not lend them your voice."
+  },
+  {
+    "id": "relapse",
+    "name": "Relapse",
+    "gameText": "Instantly fill MB to max when drawn.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_relapse.png",
+    "driveId": "1rDrtY9cdIJf8C9Ng-mbPbFwi3zL4f56z",
+    "omen": "The Returning Tide",
+    "keywords": [
+      "relapse",
+      "sudden surge",
+      "old patterns"
+    ],
+    "upright": "An old tide surges back without warning. What you thought you had outgrown returns to test you.",
+    "reversed": "You fear the return of something long gone, and the fear itself is what calls it back."
+  },
+  {
+    "id": "query_library",
+    "name": "Query Library",
+    "gameText": "Glitchshift(Dungeon Deck).",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_query_library.png",
+    "driveId": "1VNJ_okGSMjPpux03dUG2eJ3WFieHXokB",
+    "omen": "The Forbidden Index",
+    "keywords": [
+      "knowledge",
+      "searching",
+      "forbidden lore"
+    ],
+    "upright": "Seek, and the stacks will offer a volume you did not request. Read it carefully; some pages read you back.",
+    "reversed": "You search endlessly for an answer you do not truly want to find."
+  },
+  {
+    "id": "compelled_introspection",
+    "name": "Compelled Introspection",
+    "gameText": "Glitchshift(Current Character).",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck"
+    ],
+    "image": "images/card_compelled_introspection.png",
+    "driveId": "18NdZRYPPmqlG07oIRuGyI6TkFlW82eIs",
+    "omen": "The Mirror Beneath",
+    "keywords": [
+      "self-reflection",
+      "identity",
+      "uncomfortable truth"
+    ],
+    "upright": "You will be made to look inward, whether you wish to or not. The face in the deep mirror is still yours.",
+    "reversed": "You avoid your reflection, but it has been following you from room to room."
+  },
+  {
+    "id": "left_hook",
+    "name": "Left Hook",
+    "gameText": "Deal 3 Physical Damage to target, Gain 1 Combo Point.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "DungeonDeck",
+      "Str"
+    ],
+    "image": "images/card_left_hook.png",
+    "driveId": "1MGlTRYRJg6YiEOzBEhIAN6u31LO7BUw0",
+    "omen": "The Opening Blow",
+    "keywords": [
+      "initiative",
+      "momentum",
+      "setup"
+    ],
+    "upright": "Strike first and strike plainly. A simple opening builds toward a greater blow.",
+    "reversed": "You keep opening and never finishing. Momentum unspent is momentum lost."
+  },
+  {
+    "id": "sleight_of_hand",
+    "name": "Sleight of Hand",
+    "gameText": "Backpocket target card.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Enforcer"
+    ],
+    "image": "images/card_sleight_of_hand.png",
+    "driveId": "1nd_4ulsJDyXdh5J0vdmGo4-7gWzE4cBA",
+    "omen": "The Hidden Card",
+    "keywords": [
+      "secrets",
+      "preparation",
+      "holding back"
+    ],
+    "upright": "Keep something hidden in reserve, even at a cost. The card you hold back will save you later.",
+    "reversed": "You hide so much that even you have forgotten what is up your sleeve."
+  },
+  {
+    "id": "not_yet",
+    "name": "Not Yet",
+    "gameText": "Target a card, send the target to the top of the draw pile.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Enforcer"
+    ],
+    "image": "images/card_not_yet.png",
+    "driveId": "1Eixv7LNYn9UKzbYzkmkd4GKYJyhDgX_B",
+    "omen": "The Deferred Fate",
+    "keywords": [
+      "delay",
+      "timing",
+      "postponement"
+    ],
+    "upright": "Not now, but soon. What you push away will return to the top of the pile when the time is right.",
+    "reversed": "You keep saying “not yet” to something that has waited long enough."
+  },
+  {
+    "id": "haymaker",
+    "name": "Haymaker",
+    "gameText": "Deal 3 Physical Damage to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Enforcer"
+    ],
+    "image": "images/card_haymaker.png",
+    "driveId": "1HwTSuFY8sTFgMJlujjz5zW0P260Hcd7q",
+    "omen": "The Honest Blow",
+    "keywords": [
+      "directness",
+      "force",
+      "simplicity"
+    ],
+    "upright": "No tricks, no rituals. A direct and honest effort is all this moment requires.",
+    "reversed": "Brute force will not solve a problem that has no surface to strike."
+  },
+  {
+    "id": "take_cover",
+    "name": "Take Cover",
+    "gameText": "Gain 3 Block.",
+    "source": "Block",
+    "tier": 1,
+    "pools": [
+      "Enforcer"
+    ],
+    "image": "images/card_take_cover.png",
+    "driveId": "1tkVxcZ4Q6m_HPhVvdoQe2hncrIdg5nRX",
+    "omen": "The Shelter",
+    "keywords": [
+      "safety",
+      "caution",
+      "protection"
+    ],
+    "upright": "Find cover and wait for the storm to pass. There is no shame in surviving.",
+    "reversed": "You have hidden so long that the shelter has become a cage."
+  },
+  {
+    "id": "fang",
+    "name": "Fang",
+    "gameText": "Apply 3 Poison Infliction to target.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_fang.png",
+    "driveId": "1qJcAlBcllalrQb2Xf6gGNuLbsB8XSwVA",
+    "omen": "The Serpent's Kiss",
+    "keywords": [
+      "slow harm",
+      "hidden threat",
+      "patience"
+    ],
+    "upright": "A small bite now will do its work long after. Plant your influence and let time carry it.",
+    "reversed": "Something has already bitten you. The venom works quietly; look for the mark."
+  },
+  {
+    "id": "sting",
+    "name": "Sting",
+    "gameText": "Apply 6-9 Poison Infliction to target.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_sting.png",
+    "driveId": "18O3_2d_ycL0srq1yUvbjamT4MEt8Gf6z",
+    "omen": "The Deep Venom",
+    "keywords": [
+      "potent influence",
+      "uncertainty",
+      "lingering effect"
+    ],
+    "upright": "A powerful influence enters the bloodstream of events. Its full strength is uncertain, but it will be felt.",
+    "reversed": "A sharp word or deed lingers far longer than you meant it to."
+  },
+  {
+    "id": "toxicate",
+    "name": "Toxicate",
+    "gameText": "If the target is poisoned, apply 3 Poison Infliction to the target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_toxicate.png",
+    "driveId": "1l86AmJZfK9cQflAZQAZKV3xGX2ucX3Ne",
+    "omen": "The Compounding Rot",
+    "keywords": [
+      "escalation",
+      "compounding",
+      "building on weakness"
+    ],
+    "upright": "Where weakness already exists, press further. Small advantages compound into ruin for your foe.",
+    "reversed": "One bad habit feeds another. Break the chain at its first link."
+  },
+  {
+    "id": "contaminate",
+    "name": "Contaminate",
+    "gameText": "Apply 3 Poison Infliction to target, If the target is bleeding instead Apply 6 Poison Infliction.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_contaminate.png",
+    "driveId": "1UC7E--B40kppOBSyklTMSoHK_qKHDaHv",
+    "omen": "The Tainted Wound",
+    "keywords": [
+      "corruption",
+      "vulnerability",
+      "opportunity"
+    ],
+    "upright": "An open wound in your rival's defenses invites deeper corruption. Strike where they already bleed.",
+    "reversed": "Old wounds have left you open to new taint. Tend them before something seeps in."
+  },
+  {
+    "id": "envenom",
+    "name": "Envenom",
+    "gameText": "Apply 2 Poison Infliction to target, ALL damage the target deals is poison damage as long as they are poisoned.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_envenom.png",
+    "driveId": "1JsgzZeB-4oSj7I257tee_59TDC4E4L5N",
+    "omen": "The Corrupted Source",
+    "keywords": [
+      "corruption",
+      "influence",
+      "changing others"
+    ],
+    "upright": "Taint the source and everything that flows from it changes. Your influence will color all they do.",
+    "reversed": "Something has poisoned your well, and every word you speak now carries it."
+  },
+  {
+    "id": "bloodseeker_vial",
+    "name": "Bloodseeker Vial",
+    "gameText": "Apply 6 Poison Infliction to target, Coagulate 9.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Int"
+    ],
+    "image": "images/card_bloodseeker_vial.png",
+    "driveId": "1TlL9Z07Y4lUcG4HYbL7jeipNEeL4dmNT",
+    "omen": "The Alchemist's Phial",
+    "keywords": [
+      "potency",
+      "binding",
+      "dangerous mixtures"
+    ],
+    "upright": "A potent concoction is brewing in your life. It will both poison and bind; be sure which side of the glass you stand on.",
+    "reversed": "You mix forces you do not understand. The vial is warm in your hand for a reason."
+  },
+  {
+    "id": "worship",
+    "name": "Worship",
+    "gameText": "Gain 3 Block, Luck 1.",
+    "source": "Block",
+    "tier": 1,
+    "pools": [
+      "Resonator"
+    ],
+    "image": "images/card_worship.png",
+    "driveId": "1tRjixO15ssNCrrZoZNoIe9_O9Yosf0sB",
+    "omen": "The Devout Offering",
+    "keywords": [
+      "faith",
+      "devotion",
+      "protection through sacrifice"
+    ],
+    "upright": "Bow to something greater and it will shelter you, a little. Faith offers both shield and fortune.",
+    "reversed": "You kneel to something that does not know your name. Ask what your devotion truly buys."
+  },
+  {
+    "id": "inspiration",
+    "name": "Inspiration",
+    "gameText": "Gain 1 AP.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Resonator"
+    ],
+    "image": "images/card_inspiration.png",
+    "driveId": "154SdO3oW84FJYonFsgFLByFreONQG9qU",
+    "omen": "The Spark From Below",
+    "keywords": [
+      "inspiration",
+      "energy",
+      "costly insight"
+    ],
+    "upright": "A sudden surge of energy and purpose, drawn from somewhere deep. Use it well; it was not freely given.",
+    "reversed": "Inspiration that costs this much may not be your own. Who whispered it?"
+  },
+  {
+    "id": "flesh_offering",
+    "name": "Flesh Offering",
+    "gameText": "Luck 3.",
+    "source": "Effect",
+    "tier": 1,
+    "pools": [
+      "Resonator"
+    ],
+    "image": "images/card_flesh_offering.png",
+    "driveId": "1GWTO0SSy4RD35Afps8d7bJbzIeP49weH",
+    "omen": "The Bargain of Flesh",
+    "keywords": [
+      "sacrifice",
+      "luck",
+      "dark bargains"
+    ],
+    "upright": "Give something of yourself to the unseen, and fortune will tilt your way.",
+    "reversed": "Whatever grants your luck is keeping a careful tally."
+  },
+  {
+    "id": "ritual_dagger",
+    "name": "Ritual Dagger",
+    "gameText": "Deal 1-3 Physical Damage, Luck 1, Hungry 2, Dip.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Resonator"
+    ],
+    "image": "images/card_ritual_dagger.png",
+    "driveId": "171oe1gNxPmW3eX2Mig7iA6vOzNWnRiPl",
+    "omen": "The Ceremonial Edge",
+    "keywords": [
+      "ritual",
+      "hunger",
+      "chance"
+    ],
+    "upright": "A ritual begins with a small cut. Its power grows with hunger, and luck walks beside the blade.",
+    "reversed": "The ritual has become a compulsion. The dagger hungers, and so do you."
+  },
+  {
+    "id": "cull",
+    "name": "Cull",
+    "gameText": "Deal 2-8 Physical Damage to target, if the target is at low health deal 8 Physical Damage instead.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Resonator"
+    ],
+    "image": "images/card_cull.png",
+    "driveId": "1XhQg0MisZQ4f7_LRUne5lnSMuaQQH82Z",
+    "omen": "The Reaping",
+    "keywords": [
+      "endings",
+      "culling",
+      "finishing what is weak"
+    ],
+    "upright": "Cut away what is already failing. The weakest thing in your life is ready to be ended cleanly.",
+    "reversed": "You prune too eagerly. Not all that struggles is meant to be cut down."
+  },
+  {
+    "id": "right_hook",
+    "name": "Right Hook",
+    "gameText": "Spend all of your Combo Points, Deal 3 Physical Damage per CP spent this way.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_right_hook.png",
+    "driveId": "1iOC50MoA9GyvaZ2oG3iek0mCl6YOUUov",
+    "omen": "The Finishing Blow",
+    "keywords": [
+      "culmination",
+      "payoff",
+      "release of stored power"
+    ],
+    "upright": "Everything you have built comes to bear at once. The preparation was the point; now spend it.",
+    "reversed": "You spend everything in a single moment and are left with empty hands."
+  },
+  {
+    "id": "stunner",
+    "name": "Stunner",
+    "gameText": "Stun the target.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_stunner.png",
+    "driveId": "1NfGtKNLzv_q6sHXgY7ftSh6LHEYyqtqI",
+    "omen": "The Thunderclap",
+    "keywords": [
+      "shock",
+      "overwhelming force",
+      "seizing the moment"
+    ],
+    "upright": "Strike with such force that the world holds its breath. In that pause, the advantage is yours.",
+    "reversed": "A shock has left you reeling. Wait for the ringing to fade before you decide anything."
+  },
+  {
+    "id": "slash",
+    "name": "Slash",
+    "gameText": "Deal 2 Bleed I-II Damage to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_slash.png",
+    "driveId": "1BJ_gtUxEJ-FlwO-UdMruH8XgNzFUYAPP",
+    "omen": "The Open Vein",
+    "keywords": [
+      "lasting effect",
+      "wounds",
+      "consequence"
+    ],
+    "upright": "A swift, clean cut that keeps working long after the blade has passed.",
+    "reversed": "A careless word has opened something that will not close quickly."
+  },
+  {
+    "id": "gouge",
+    "name": "Gouge",
+    "gameText": "Deal 2 Physical Damage to target, Rend.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_gouge.png",
+    "driveId": "16nfqfhsuOs2YrnoFQxDpcoZ_MsCdIhwi",
+    "omen": "The Rent Flesh",
+    "keywords": [
+      "tearing",
+      "vulnerability",
+      "breaking defenses"
+    ],
+    "upright": "Tear open what was closed to you. Your rival's guard will not mend in time.",
+    "reversed": "Someone has torn into your defenses. Patch the breach before you fight again."
+  },
+  {
+    "id": "puncture",
+    "name": "Puncture",
+    "gameText": "Deal 3 Bleed II Damage to target.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_puncture.png",
+    "driveId": "1SSB-Nm8flcu9ZIxo3Zr3EfiFRxbuHne5",
+    "omen": "The Piercing Truth",
+    "keywords": [
+      "penetration",
+      "truth",
+      "precision"
+    ],
+    "upright": "A pointed truth will pierce deeper than any shout. Aim it carefully.",
+    "reversed": "A sharp truth has found you. It hurts because it is accurate."
+  },
+  {
+    "id": "salt_the_wounds",
+    "name": "Salt the Wounds",
+    "gameText": "Deal 2 Physical Damage to target, Haemophilia 5.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_salt_the_wounds.png",
+    "driveId": "1CpHqCJUrUKUe1GTEkoht5WPWCRAw-Uuy",
+    "omen": "The Salted Earth",
+    "keywords": [
+      "cruelty",
+      "worsening",
+      "lingering pain"
+    ],
+    "upright": "Once the wound is open, deepen its misery. Your enemy will not heal while you are watching.",
+    "reversed": "You keep reopening your own pain. Let the salt wash away."
+  },
+  {
+    "id": "lifesteal",
+    "name": "Lifesteal",
+    "gameText": "Deal 2 Physical Damage to target, Blood-Drinker 4-6.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_lifesteal.png",
+    "driveId": "1iHumccMeh_qpK1WAQa69xe_1UMhx-c-1",
+    "omen": "The Blood-Drinker",
+    "keywords": [
+      "feeding",
+      "vitality",
+      "taking strength"
+    ],
+    "upright": "Draw strength from the struggle itself. Every blow you land returns to you as life.",
+    "reversed": "Something drinks from you while you sleep. Notice who grows stronger as you grow pale."
+  },
+  {
+    "id": "exsanguinate",
+    "name": "Exsanguinate",
+    "gameText": "Deal 2 Physical Damage to target, Coagulate 5.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_exsanguinate.png",
+    "driveId": "1JaHDLQCVz8W8Ax9bLU3Z0Va0N9zSUghu",
+    "omen": "The Clotting Dark",
+    "keywords": [
+      "draining",
+      "stopping",
+      "stagnation"
+    ],
+    "upright": "A slow draining will become a halting. What flows freely now will soon thicken and stop.",
+    "reversed": "Your energy has gone stagnant. Stir the blood before it sets."
+  },
+  {
+    "id": "blood_spear",
+    "name": "Blood Spear",
+    "gameText": "Deal 2 Physical Damage to target, Blood-Curse 3.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_blood_spear.png",
+    "driveId": "1DTDm2QjpKhspobhJdtX20zFguv0z_iEW",
+    "omen": "The Cursed Lance",
+    "keywords": [
+      "curses",
+      "commitment",
+      "sacrifice"
+    ],
+    "upright": "Pay in blood to lay a curse that will follow your foe for days.",
+    "reversed": "A curse you laid long ago is circling back to its maker."
+  },
+  {
+    "id": "target",
+    "name": "Target",
+    "gameText": "Inflict target with Weakness 1, ADD 2x 'Haymaker' to your hand.",
+    "source": "Effect",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_target.png",
+    "driveId": "1LadGDBuG9pdLtz_Ojoeb_8s5MrbjQ5bm",
+    "omen": "The Chosen Mark",
+    "keywords": [
+      "focus",
+      "singling out",
+      "preparation"
+    ],
+    "upright": "Choose your mark and gather your strength. Focus turns many small efforts into one decisive purpose.",
+    "reversed": "You have become someone else's target. Change your path."
+  },
+  {
+    "id": "pound_of_flesh",
+    "name": "Pound of Flesh",
+    "gameText": "Deal 2 Bleed I-II Damage to target, ADD 2x 'Restore' to Draw Pile.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_pound_of_flesh.png",
+    "driveId": "1IlxfHIemUgKuolDUoB59UwblwKD5zy--",
+    "omen": "The Debt Repaid",
+    "keywords": [
+      "debt",
+      "exchange",
+      "eventual restoration"
+    ],
+    "upright": "What is taken now will be returned to you later. The wound is the down payment on recovery.",
+    "reversed": "Someone demands their pound of flesh. Decide whether the debt is truly yours."
+  },
+  {
+    "id": "deluge_of_blood",
+    "name": "Deluge of Blood",
+    "gameText": "Deal 2 Bleed I Damage to target area, Rend.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_deluge_of_blood.png",
+    "driveId": "1zplKvewJiVzZYhBSj98yUiELAFMafNQD",
+    "omen": "The Crimson Flood",
+    "keywords": [
+      "overwhelming change",
+      "sacrifice",
+      "wide impact"
+    ],
+    "upright": "A great flood will sweep across many parts of your life at once. You will pay to unleash it, but nothing will stand unchanged.",
+    "reversed": "You are drowning in a crisis you helped summon."
+  },
+  {
+    "id": "blood_lance",
+    "name": "Blood Lance",
+    "gameText": "Deal 4 Bleed II Damage to target, Rend.",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_blood_lance.png",
+    "driveId": "10fnPxR-ks0P-TUh7jSdl6yhpanwfaiiG",
+    "omen": "The Heart's Lance",
+    "keywords": [
+      "total commitment",
+      "great cost",
+      "decisive power"
+    ],
+    "upright": "Stake much of yourself on a single piercing effort. It will strike true, if you can bear the cost.",
+    "reversed": "You are giving more of yourself than this cause deserves."
+  },
+  {
+    "id": "injector",
+    "name": "Injector",
+    "gameText": "Enchant target cards damage type into Bleed I Damage.",
+    "source": "Effect",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_injector.png",
+    "driveId": "1RT21-zuE49091ZgjT5uVUepzXs7u8jTq",
+    "omen": "The Infusion",
+    "keywords": [
+      "transformation",
+      "influence",
+      "altered nature"
+    ],
+    "upright": "Something ordinary will be changed at its core. Infuse your intent into what you already have.",
+    "reversed": "Something has been slipped into your routine and is changing you. Notice what you have been taking in."
+  },
+  {
+    "id": "haematology_101",
+    "name": "Haematology 101",
+    "gameText": "Deal 2 Bleed I Damage to target, Blood Curse 1, Quest(deal damage with Blood Curse 0/3).[Turns into Haematology 102]",
+    "source": "Attack",
+    "tier": 3,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_haematology_101.png",
+    "driveId": "1n-h6e1GvlOaZ85hYYCvmMbgN3RXFVHD4",
+    "omen": "The First Lesson",
+    "keywords": [
+      "learning",
+      "beginnings",
+      "apprenticeship"
+    ],
+    "upright": "You are a student of something old and red. Learn the first lesson well; the curriculum grows darker.",
+    "reversed": "You skip ahead before the basics are mastered. The blood does not forgive shortcuts."
+  },
+  {
+    "id": "haematology_102",
+    "name": "Haematology 102",
+    "gameText": "Deal 4 Bleed II Damage to target, Blood Curse 2, Quest(deal damage with Blood Curse 0/3).[Turns into Hemomancy 201]",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_haematology_102.png",
+    "driveId": "1Me_cReIpzvNf-L3Qx1FWS-HEYN5YsIan",
+    "omen": "The Second Lesson",
+    "keywords": [
+      "progression",
+      "growing skill",
+      "deeper study"
+    ],
+    "upright": "Your understanding deepens. The forbidden discipline begins to answer when you call.",
+    "reversed": "Knowledge outpaces wisdom. You know how, but not yet whether you should."
+  },
+  {
+    "id": "hemomancy_201",
+    "name": "Hemomancy 201",
+    "gameText": "Deal 4 Bleed III Damage to target, Blood Curse 3.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Str"
+    ],
+    "image": "images/card_hemomancy_201.png",
+    "driveId": "1uaaagjt-Bhlp1aBI2a9mn7aoqGAoIanM",
+    "omen": "The Mastery of Blood",
+    "keywords": [
+      "mastery",
+      "culmination",
+      "power earned"
+    ],
+    "upright": "Your long study bears fruit. What began as a lesson is now true power, and it answers to you.",
+    "reversed": "Mastery has made you forget the cost of each lesson. The blood remembers."
+  },
+  {
+    "id": "ignite",
+    "name": "Ignite",
+    "gameText": "Deal 2 Fire damage to target, Spread.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Wis"
+    ],
+    "image": "images/card_ignite.png",
+    "driveId": "1Pl374ZflcBnApy4NpwdD5XtNyULzj7YG",
+    "omen": "The First Spark",
+    "keywords": [
+      "beginnings",
+      "spreading influence",
+      "passion"
+    ],
+    "upright": "A small flame catches. Your idea will spread further than you imagined.",
+    "reversed": "A spark you dropped carelessly is spreading where you never intended."
+  },
+  {
+    "id": "splash",
+    "name": "Splash",
+    "gameText": "Deal 2 Water damage to target, Cascade.",
+    "source": "Attack",
+    "tier": 1,
+    "pools": [
+      "Wis"
+    ],
+    "image": "images/card_splash.png",
+    "driveId": "1zBrgljw3VTD5X4y4bq4n2c9jGXAmJnFQ",
+    "omen": "The Rippling Wave",
+    "keywords": [
+      "ripple effects",
+      "emotion",
+      "chain reaction"
+    ],
+    "upright": "One drop in still water sends rings to every shore. A small act will ripple outward.",
+    "reversed": "Your feelings are spilling onto those around you. Mind the ripples."
+  },
+  {
+    "id": "ember",
+    "name": "Ember",
+    "gameText": "Deal 4 Fire damage to target, Spread, Quest(play this card 0/6 times).[Turns into Fiery Lash]",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Wis"
+    ],
+    "image": "images/card_ember.png",
+    "driveId": "1ZPIN9etuZ4_hJlJ_3ILZKzZuwccI1b7g",
+    "omen": "The Patient Flame",
+    "keywords": [
+      "persistence",
+      "growth",
+      "practice"
+    ],
+    "upright": "Tend the ember again and again. Repetition will turn a small fire into something fierce.",
+    "reversed": "You keep feeding a flame that has outgrown its hearth."
+  },
+  {
+    "id": "fiery_lash",
+    "name": "Fiery Lash",
+    "gameText": "Deal 6 Fire damage to target, Spread, inflict the target with Electric element instead of fire.",
+    "source": "Attack",
+    "tier": 2,
+    "pools": [
+      "Wis"
+    ],
+    "image": "images/card_fiery_lash.png",
+    "driveId": "1JL97y-5cLdIJgY1dYbYrj8Xa1nIyU2ny",
+    "omen": "The Storm-Lash",
+    "keywords": [
+      "transformation",
+      "mastery",
+      "unexpected change"
+    ],
+    "upright": "Your fire has grown into something stranger: lightning born of flame. Expect power to arrive in an unexpected form.",
+    "reversed": "Your power has changed into something you no longer recognize."
+  }
+]
