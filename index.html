@@ -16,7 +16,10 @@
     <h1>VoM Tarot</h1>
     <p class="lede">Draw three cards from the deep: what has passed, what stands now, and what approaches.</p>
     <div class="stack" id="stack" aria-hidden="true"></div>
-    <button class="action" id="shuffle" disabled>Shuffle the deck</button>
+    <div class="buttons">
+      <button class="action" id="shuffle" disabled>Shuffle the deck</button>
+      <a class="action steam-link" href="#" target="_blank" rel="noopener" hidden>View on Steam</a>
+    </div>
     <p class="aside-link" id="intro-note"><a href="how-to-read.html">How readings work</a></p>
   </section>
 
@@ -33,6 +36,7 @@
       <div class="buttons">
         <button class="action" id="share">Share your reading</button>
         <button class="action" id="restart">Draw again</button>
+        <a class="action steam-link" href="#" target="_blank" rel="noopener" hidden>View on Steam</a>
       </div>
       <p class="share-status" id="share-status" aria-live="polite"></p>
       <p class="aside-link"><a href="how-to-read.html">How readings work</a></p>
@@ -41,6 +45,11 @@
 
 </main>
 <script>
+/* The game's Steam store page. Paste the full link between the quotes, e.g.
+   "https://store.steampowered.com/app/1234567/Game_Name/". While it's empty the Steam buttons stay hidden. */
+const STEAM_URL = "";
+const STEAM_LABEL = "View on Steam";        // e.g. "Wishlist on Steam" before release
+
 const SPREAD_SIZE = 21;
 const REVERSED_CHANCE = 0.3;
 const STACK_SIZE = 7;
@@ -399,6 +408,12 @@ async function shareReading() {
 }
 
 /* ---------- start ---------- */
+for (const a of document.querySelectorAll(".steam-link")) {
+  if (!STEAM_URL) continue;
+  a.href = STEAM_URL;
+  a.textContent = STEAM_LABEL;
+  a.hidden = false;
+}
 $("shuffle").addEventListener("click", shuffleAndDeal);
 $("restart").addEventListener("click", shuffleAndDeal);
 $("share").addEventListener("click", shareReading);
