@@ -128,6 +128,8 @@ button.action:disabled:hover { background: transparent; color: var(--bone); }
 .waiting { color: var(--dim); font-style: italic; text-align: center; animation: breathe 2.4s ease-in-out infinite; }
 @keyframes breathe { 50% { opacity: 0.35; } }
 .again { margin-top: 1.5rem; text-align: center; }
+.again .buttons { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.share-status { color: var(--dim); font-style: italic; min-height: 1.6em; margin: 1rem auto 0; max-width: 32rem; }
 
 /* ---------- how-to page ---------- */
 .guide { max-width: 44rem; }

@@ -30,7 +30,11 @@
     <div class="slots" id="slots"></div>
     <div class="fortune" id="fortune" aria-live="polite"></div>
     <div class="again" id="again" hidden>
-      <button class="action" id="restart">Draw again</button>
+      <div class="buttons">
+        <button class="action" id="share">Share your reading</button>
+        <button class="action" id="restart">Draw again</button>
+      </div>
+      <p class="share-status" id="share-status" aria-live="polite"></p>
       <p class="aside-link"><a href="how-to-read.html">How readings work</a></p>
     </div>
   </section>
@@ -81,7 +85,7 @@ function shuffle(list) {
   return a;
 }
 
-let CARDS = [], spread = [], chosen = [];
+let CARDS = [], spread = [], chosen = [], lastReading = null;
 
 function show(section) {
   for (const id of ["intro", "choose", "reading"]) $(id).hidden = id !== section;
@@ -187,6 +191,8 @@ async function reveal() {
   $("fortune").classList.remove("shown");
   await sleep(step ? 300 : 0);
   $("fortune").innerHTML = reading ? readingHTML(reading) : templateReading(picks);
+  lastReading = { picks, counsel: reading ? counselFrom(reading) : CLOSINGS[picks.filter(p => p.reversed).length] };
+  $("share-status").textContent = "";
   $("fortune").classList.add("shown");
   $("again").hidden = false;
 }
@@ -231,9 +237,171 @@ function templateReading(picks) {
   return `<p class="opening">${escapeHTML(opening)}</p>${body}<p>${escapeHTML(closing)}</p>`;
 }
 
+
+/* ---------- share image: three cards, the closing counsel and the site address ---------- */
+const SHARE_W = 1080, SHARE_H = 1350;           // 4:5, suits Instagram, X and Facebook feeds
+const siteURL = () => new URL(".", location.href).href;
+const siteLabel = () => siteURL().replace(/^https?:\/\//, "").replace(/\/$/, "");
+
+/* The counsel is the reading's short last line; if the last paragraph is long, use its last sentence. */
+function counselFrom(text) {
+  const paras = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+  const last = paras[paras.length - 1] || "";
+  if (last.length <= 160) return last;
+  const sentences = last.match(/[^.!?]+[.!?]+/g) || [last];
+  return sentences[sentences.length - 1].trim();
+}
+
+const loadImage = src => new Promise(resolve => {
+  const img = new Image();
+  img.onload = () => resolve(img);
+  img.onerror = () => resolve(null);
+  img.src = src;
+});
+
+function wrapLines(ctx, text, width) {
+  const lines = [];
+  let line = "";
+  for (const word of text.split(/\s+/)) {
+    const test = line ? `${line} ${word}` : word;
+    if (ctx.measureText(test).width <= width || !line) line = test;
+    else { lines.push(line); line = word; }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+async function renderShareImage({ picks, counsel }) {
+  await Promise.all([
+    document.fonts.load('56px "IM Fell English"'),
+    document.fonts.load('italic 40px "IM Fell English"')
+  ]).catch(() => {});
+  const css = getComputedStyle(document.documentElement);
+  const color = name => css.getPropertyValue(name).trim();
+  const font = (size, italic) => `${italic ? "italic " : ""}${size}px "IM Fell English", Georgia, serif`;
+
+  const canvas = document.createElement("canvas");
+  canvas.width = SHARE_W; canvas.height = SHARE_H;
+  const ctx = canvas.getContext("2d");
+  ctx.textAlign = "center";
+  ctx.textBaseline = "alphabetic";
+
+  // background: the abyss with a faint glow from above
+  ctx.fillStyle = color("--abyss");
+  ctx.fillRect(0, 0, SHARE_W, SHARE_H);
+  const glow = ctx.createRadialGradient(SHARE_W / 2, 0, 0, SHARE_W / 2, 0, SHARE_W * 0.8);
+  glow.addColorStop(0, "rgba(40, 62, 58, 0.9)");
+  glow.addColorStop(1, "rgba(40, 62, 58, 0)");
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, SHARE_W, SHARE_H);
+
+  ctx.fillStyle = color("--bone");
+  ctx.font = font(64);
+  ctx.fillText("VoM Tarot", SHARE_W / 2, 128);
+
+  // the three cards
+  const cardW = 288, cardH = 500, gap = 36;
+  const x0 = (SHARE_W - (cardW * 3 + gap * 2)) / 2, cardY = 250;
+  const images = await Promise.all(picks.map(p =>
+    loadImage(`tarot_cards/card_${p.card.id}_${p.reversed ? "reversed" : "upright"}.png`)));
+  ctx.imageSmoothingQuality = "high";
+  picks.forEach((p, i) => {
+    const x = x0 + i * (cardW + gap);
+    ctx.fillStyle = color("--dim");
+    ctx.font = font(28, true);
+    ctx.fillText(POSITIONS[i].title, x + cardW / 2, cardY - 26);
+    ctx.save();
+    ctx.shadowColor = "rgba(159, 211, 184, 0.35)";
+    ctx.shadowBlur = 40;
+    if (images[i]) {
+      ctx.drawImage(images[i], x, cardY, cardW, cardH);
+    } else {
+      ctx.fillStyle = color("--deep");
+      ctx.fillRect(x, cardY, cardW, cardH);
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = color("--bone");
+      ctx.font = font(30);
+      wrapLines(ctx, p.card.omen, cardW - 32).forEach((l, k) => ctx.fillText(l, x + cardW / 2, cardY + cardH / 2 + k * 36));
+    }
+    ctx.restore();
+  });
+
+  // ornament, then the counsel
+  const midY = cardY + cardH + 72;
+  ctx.strokeStyle = color("--verdigris");
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(SHARE_W / 2 - 120, midY); ctx.lineTo(SHARE_W / 2 - 16, midY);
+  ctx.moveTo(SHARE_W / 2 + 16, midY); ctx.lineTo(SHARE_W / 2 + 120, midY);
+  ctx.stroke();
+  ctx.beginPath(); ctx.arc(SHARE_W / 2, midY, 7, 0, Math.PI * 2); ctx.stroke();
+
+  let size = 46, lines;
+  do {
+    ctx.font = font(size, true);
+    lines = wrapLines(ctx, counsel, SHARE_W - 200);
+    size -= 2;
+  } while (lines.length > 4 && size > 28);
+  const lineH = Math.round((size + 2) * 1.35);
+  const blockTop = midY + 50;
+  const space = SHARE_H - 150 - blockTop;
+  let y = blockTop + Math.max(0, (space - lineH * lines.length) / 2) + size;
+  ctx.fillStyle = color("--glow");
+  for (const l of lines) { ctx.fillText(l, SHARE_W / 2, y); y += lineH; }
+
+  // where to draw your own
+  ctx.fillStyle = color("--dim");
+  ctx.font = font(30, true);
+  ctx.fillText("Draw your own at", SHARE_W / 2, SHARE_H - 92);
+  ctx.fillStyle = color("--bone");
+  ctx.font = font(36);
+  ctx.fillText(siteLabel(), SHARE_W / 2, SHARE_H - 44);
+
+  return new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+}
+
+async function shareReading() {
+  if (!lastReading) return;
+  const btn = $("share"), status = $("share-status");
+  btn.disabled = true;
+  status.textContent = "Preparing your image…";
+  try {
+    const blob = await renderShareImage(lastReading);
+    const file = new File([blob], "vom-tarot-reading.png", { type: "image/png" });
+    const omens = lastReading.picks.map(p => p.card.omen);
+    const caption = `My VoM Tarot reading: ${omens.join(", ")}. Draw your own at ${siteURL()}`;
+    const onPhone = matchMedia("(pointer: coarse)").matches;
+
+    if (onPhone && navigator.canShare && navigator.canShare({ files: [file] })) {
+      status.textContent = "";
+      try {
+        await navigator.share({ files: [file], text: caption, title: "My VoM Tarot reading" });
+      } catch (err) {
+        if (err.name !== "AbortError") throw err;  // closing the share sheet is fine
+      }
+    } else {
+      const url = URL.createObjectURL(blob);
+      const a = Object.assign(document.createElement("a"), { href: url, download: file.name });
+      document.body.append(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+      let copied = false;
+      try { await navigator.clipboard.writeText(caption); copied = true; } catch {}
+      status.textContent = copied
+        ? "Image saved, and a caption is copied. Paste it into your post along with the image."
+        : "Image saved. Add it to your post to share your reading.";
+    }
+  } catch (err) {
+    console.error(err);
+    status.textContent = "The image could not be made. Try again in a moment.";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
 /* ---------- start ---------- */
 $("shuffle").addEventListener("click", shuffleAndDeal);
 $("restart").addEventListener("click", shuffleAndDeal);
+$("share").addEventListener("click", shareReading);
 buildStack();
 fetch("cards.json")
   .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
