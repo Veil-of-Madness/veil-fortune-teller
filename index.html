@@ -13,7 +13,7 @@
 <main class="reader">
 
   <section id="intro">
-    <h1>Veil of Madness Tarot</h1>
+    <h1>VoM Tarot</h1>
     <p class="lede">Draw three cards from the deep: what has passed, what stands now, and what approaches.</p>
     <div class="stack" id="stack" aria-hidden="true"></div>
     <div class="buttons">
@@ -47,8 +47,8 @@
 <script>
 /* The game's Steam store page. Paste the full link between the quotes, e.g.
    "https://store.steampowered.com/app/1234567/Game_Name/". While it's empty the Steam buttons stay hidden. */
-const STEAM_URL = "https://store.steampowered.com/app/2889330/Veil_of_Madness/?utm_source=tarot&utm_medium=link";
-const STEAM_LABEL = "VoM on Steam";        // e.g. "Wishlist on Steam" before release
+const STEAM_URL = "";
+const STEAM_LABEL = "View on Steam";
 
 const SPREAD_SIZE = 21;
 const REVERSED_CHANCE = 0.3;
@@ -74,13 +74,7 @@ const CLOSINGS = [
   "All three cards lie inverted. Something vast has turned its gaze toward you."
 ];
 
-const BACK_SVG = `<svg viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-  <circle cx="50" cy="50" r="44"/><circle cx="50" cy="50" r="30" stroke-width="1"/>
-  <path d="M22 50 Q50 26 78 50 Q50 74 22 50 Z"/><circle cx="50" cy="50" r="8" fill="currentColor"/>
-  <path d="M50 6 V18 M50 82 V94 M6 50 H18 M82 50 H94" stroke-width="1"/>
-  <path d="M30 78 q4 8 -2 14 M50 80 q-3 8 2 14 M70 78 q-4 8 2 14" stroke-width="1.2"/>
-</svg>`;
-const backHTML = () => `<div class="back">${BACK_SVG}</div>`;
+const backHTML = () => `<div class="back"></div>`;
 
 const $ = id => document.getElementById(id);
 const rand = n => crypto.getRandomValues(new Uint32Array(1))[0] % n;
@@ -105,7 +99,7 @@ function show(section) {
 function buildStack() {
   $("stack").innerHTML = Array.from({ length: STACK_SIZE }, (_, i) => {
     const r = (rand(9) - 4) * 0.9, x = rand(7) - 3, y = -i;
-    return `<div class="back" style="--r:${r}deg; --x:${x}px; --y:${y}px">${BACK_SVG}</div>`;
+    return `<div class="back" style="--r:${r}deg; --x:${x}px; --y:${y}px"></div>`;
   }).join("");
 }
 

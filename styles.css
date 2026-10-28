@@ -63,17 +63,13 @@ button.action:disabled:hover { background: transparent; color: var(--bone); }
 .aside-link a { color: var(--dim); }
 .aside-link a:hover { color: var(--glow); }
 
-/* ---------- card back (placeholder until the designed back arrives) ---------- */
+/* ---------- card back ---------- */
 .back {
   aspect-ratio: var(--card-ratio);
-  background: var(--deep);
-  border: 2px solid var(--verdigris);
-  outline: 1px solid var(--verdigris);
-  outline-offset: -7px;
-  display: grid;
-  place-items: center;
+  background: url("card_back.png") center / 100% 100% no-repeat;
+  image-rendering: pixelated;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
 }
-.back svg { width: 72%; height: auto; color: var(--verdigris); }
 
 /* ---------- reading page ---------- */
 .reader { text-align: center; }
