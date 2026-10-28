@@ -67,9 +67,13 @@ button.action:disabled:hover { background: transparent; color: var(--bone); }
 .back {
   aspect-ratio: var(--card-ratio);
   background: url("card_back.png") center / 100% 100% no-repeat;
-  image-rendering: pixelated;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  /* Smooth scaling for the small, tilted cards in the deck and the fan;
+     crisp pixels only on the large cards in the reading (see .flip .back). */
+  image-rendering: auto;
+  backface-visibility: hidden;
 }
+.flip .back { image-rendering: pixelated; }
 
 /* ---------- reading page ---------- */
 .reader { text-align: center; }
@@ -88,6 +92,8 @@ button.action:disabled:hover { background: transparent; color: var(--bone); }
   transform: translateY(var(--y)) rotate(var(--r));
   transform-origin: 50% 120%;
   transition: transform 0.25s ease, opacity 0.3s;
+  backface-visibility: hidden;
+  will-change: transform;
   animation: deal-in 0.5s cubic-bezier(.2,.7,.3,1) backwards;
   animation-delay: calc(var(--i) * 28ms);
 }
