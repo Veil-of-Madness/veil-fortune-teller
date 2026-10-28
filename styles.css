@@ -100,7 +100,15 @@ button.action:disabled:hover { background: transparent; color: var(--bone); }
 .spread .pick:first-child { margin-left: 0; }
 .spread .pick:hover, .spread .pick:focus-visible { transform: translateY(calc(var(--y) - 14px)) rotate(var(--r)); }
 .spread .pick.taken { transform: translateY(calc(var(--y) - 34px)) rotate(var(--r)); opacity: 0.35; pointer-events: none; }
-.spread .pick .back { width: 100%; }
+.spread .pick .back {
+  width: 100%;
+  /* a pre-shrunk back with a transparent margin, so the small tilted cards
+     have smooth edges and the thin gold border doesn't break into steps */
+  aspect-ratio: 166 / 284;
+  background-image: url("card_back_small.png");
+  box-shadow: none;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5));
+}
 @keyframes deal-in { from { opacity: 0; translate: 0 -160px; scale: 0.8; } }
 @media (max-width: 720px) {
   .spread { flex-wrap: wrap; gap: 0.5rem; padding-top: 0; }
